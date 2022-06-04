@@ -29,3 +29,12 @@ print(e)
 a = ("abc",)
 print(type(a))
 
+a = ["abc"]
+print(type(a))
+
+a = {"abc"}
+print(type(a))
+
+# Find "A", "b", "\n" ASCII, use these as keys, and ASCII code as values for a dict
+a = {"A":65, "b": 98, "\n": 10}
+print(a["\n"])
