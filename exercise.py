@@ -38,3 +38,6 @@ print(type(a))
 # Find "A", "b", "\n" ASCII, use these as keys, and ASCII code as values for a dict
 a = {"A":65, "b": 98, "\n": 10}
 print(a["\n"])
+
+We can't concatenate integers with strings: we have to convert them to strings using the str() function first.
+
