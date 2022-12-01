@@ -41,3 +41,6 @@ print(a["\n"])
 
 We can't concatenate integers with strings: we have to convert them to strings using the str() function first.
 
+"My goodness! My gracious!" they shouted. "MY WORD! It's something brand new! It's an elephant-bird!"
+my_string = '''"My goodness! My gracious!" they shouted. "MY WORD! It's something brand new! It's an elephant-bird!"'''
+
