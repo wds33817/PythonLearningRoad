@@ -45,3 +45,8 @@ We can't concatenate integers with strings: we have to convert them to strings u
 my_string = '''"My goodness! My gracious!" they shouted. "MY WORD! It's something brand new! It's an elephant-bird!"'''
 
 my_string = "\"My goodness! My gracious!\" they shouted. \"MY WORD! It's something brand new! It's an elephant-bird!\""
+
+Python control structures: 4 types of structures -- Conditionals, loops, functions, exception handling.
+    
+    
+
