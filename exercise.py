@@ -48,5 +48,6 @@ my_string = "\"My goodness! My gracious!\" they shouted. \"MY WORD! It's somethi
 
 Python control structures: 4 types of structures -- Conditionals, loops, functions, exception handling.
     
-    
+we use for loops when we know in advance how many times we want to repeat. Generally, 
+if we're trying to accomplish some goal, we don't know how long it will take to fulfill it, so we would likely use a different kind of loop.    
 
