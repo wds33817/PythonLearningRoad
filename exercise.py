@@ -51,3 +51,6 @@ Python control structures: 4 types of structures -- Conditionals, loops, functio
 we use for loops when we know in advance how many times we want to repeat. Generally, 
 if we're trying to accomplish some goal, we don't know how long it will take to fulfill it, so we would likely use a different kind of loop.    
 
+All loops can be written into a while loop, not necessarily a for loop. In addition, 
+while loops use an expression like conditionals use to determine if another loop should occur. 
+Not all loops are interchangeable, and for loops use predetermined amount of iterations (not while loops)
