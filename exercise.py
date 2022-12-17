@@ -54,3 +54,11 @@ if we're trying to accomplish some goal, we don't know how long it will take to 
 All loops can be written into a while loop, not necessarily a for loop. In addition, 
 while loops use an expression like conditionals use to determine if another loop should occur. 
 Not all loops are interchangeable, and for loops use predetermined amount of iterations (not while loops)
+
+
+What is an advantage of using a for loop with range() over a for-each loop?
+With range(), you know exactly how many iterations have occured.
+
+
+
+
