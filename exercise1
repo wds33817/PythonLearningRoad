@@ -92,3 +92,16 @@ mystery_string = "Lucy"
 #Add your code here!
 for i in range(1, len(mystery_string)+1):
     print(mystery_string[:i])
+
+
+
+
+
+1| is_divisible_by_four_2(some_number):
+2|     return some_number % 4 == 0
+is_divisible_by_four_2 will...
+
+never return None
+ 未提交 
+答案
+不正确:When will some_number % 4 == 0 evaluate to None? It can only ever evaluate to True or False, so one of those two will always be returned.
