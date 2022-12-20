@@ -105,3 +105,27 @@ never return None
  未提交 
 答案
 不正确:When will some_number % 4 == 0 evaluate to None? It can only ever evaluate to True or False, so one of those two will always be returned.
+
+
+
+
+
+ 1| def number_description(some_number):
+ 2|     result_string = "The number is "
+ 3|     if some_number == 0:
+ 4|         result_string += "zero:
+ 5|     else:
+ 6|         if some_number < 0:
+ 7|             result_string += "negative"
+ 8|         else:
+ 9|             result_string += "positive"
+10|         result_string += " and "
+11|         if result_string % 2 == 0:
+12|             result_string += "even"
+13|         else:
+14|             result_string += "odd"
+15|
+number_description will...
+
+always return None
+ 
