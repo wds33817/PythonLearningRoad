@@ -400,3 +400,25 @@ try:
 #Catch an IOError
 except IOError as error:
     print("An error occurred reading the file!")
+
+
+
+
+
+
+myother = 1
+try:
+    result = 10 // my_var
+    print(result)
+except (ZeroDivisionError, TypeError):
+    print("An expected error occurred!")
+else:
+    print("No errors occurred!")
+finally:
+    print("Closing down...")
+print("Done!")
+______________________________________________
+Closing down...
+Traceback (most recent call last):
+File "<string>", line 5, in <module>
+NameError: name 'my_var' is not defined
