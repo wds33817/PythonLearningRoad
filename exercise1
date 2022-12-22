@@ -345,3 +345,34 @@ print(count_letters(a_string, False))
 
 
 
+
+1| for i in range(2, -3, -1):    #Counts down from 2 to -2: 2, 1, 0, -1, -2
+2|     try:
+3|         print(2 / i)    #Prints 2 divided by the current value of i
+4|     except ZeroDivisionError:
+5|         print("We can't divide by 0!")
+
+1.0
+2.0
+We can't divide by 0!
+-2.0
+-1.0
+
+Here, the try block is inside the loop. So, when i = 0, it tries to print 2 / 0, encounters a ZeroDivisionError, and prints the message on line 5. Then, however, it keeps going with the loop because the try and except blocks were inside the loop.
+
+
+1| try:
+2|     for i in range(2, -3, -1):    #Counts down from 2 to -2: 2, 1, 0, -1, -2
+3|         print(2 / i)    #Prints 2 divided by the current value of i
+4| except ZeroDivisionError:
+5|     print("We can't divide by 0!")
+
+
+1.0
+2.0
+We can't divide by 0!
+
+Here, the loop is inside the try block. So, when i = 0, it tries to print 2 / 0, encounters a ZeroDivisionError, and prints the message on line 5. However, that except block is outside the loop, so jumping into it ends the loop. So, it doesn't continue for the next two numbers.
+
+
+
