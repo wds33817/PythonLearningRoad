@@ -433,3 +433,31 @@ cbaoa:
 def solution(S):
     return (True if S.rfind('a') < S.find('b') else False) if (S.find('a') != -1 and S.find('b') != -1) else True
 print(solution("abaaaaaa"))
+
+
+
+
+
+1| def add(numbers):
+ 2|     sum = 0
+ 3|     for i in range(len(numbers)):
+ 4|         numbers[i] = -numbers[i]
+ 5|         sum -= numbers[i]
+ 6|     return sum
+ 7| 
+ 8| my_list = [2, 4, 6, 8, 10]
+ 9| print(add(my_list))
+10| print(add(my_list))
+
+ 1| def add(numbers):
+ 2|     sum = 0
+ 3|     for number in numbers:
+ 4|         number = -number
+ 5|         sum -= number
+ 6|     return sum
+ 7| 
+ 8| my_list = [2, 4, 6, 8, 10]
+ 9| print(add(my_list))
+10| print(add(my_list))
+
+
