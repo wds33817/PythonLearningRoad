@@ -461,3 +461,32 @@ print(solution("abaaaaaa"))
 10| print(add(my_list))
 
 
+
+
+
+
+
+
+1| string1 = "Hi!"
+2| string2 = "Hey!"
+3| string3 = "Hello!"
+4| 
+5| output_file = open("MyOutput.txt", "w")
+6| output_file.write(string1)
+7| output_file.write(string2)
+8| output_file.write(string3)
+9| output_file.close()
+
+
+
+1| string1 = "Hi!"
+2| string2 = "Hey!"
+3| string3 = "Hello!"
+4| 
+5| output_file = open("MyOutput.txt", "w")
+6| output_file.write(string1 + "\n")
+7| output_file.write(string2 + "\n")
+8| output_file.write(string3)
+9| output_file.close()
+
+
