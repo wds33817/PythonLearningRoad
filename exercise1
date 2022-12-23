@@ -422,3 +422,14 @@ Closing down...
 Traceback (most recent call last):
 File "<string>", line 5, in <module>
 NameError: name 'my_var' is not defined
+
+
+
+
+
+
+cbaoa:
+# This is a sample Python script.
+def solution(S):
+    return (True if S.rfind('a') < S.find('b') else False) if (S.find('a') != -1 and S.find('b') != -1) else True
+print(solution("abaaaaaa"))
