@@ -540,3 +540,50 @@ print(inputFile.readline().strip())
 inputFile.close()
 
 
+
+
+
+
+
+
+
+#Write a function called "load_file" that accepts one 
+#parameter: a filename. The function should open the
+#file and return the contents.#
+#
+# - If the contents of the file can be interpreted as
+#   an integer, return the contents as an integer.
+# - Otherwise, if the contents of the file can be
+#   interpreted as a float, return the contents as a
+#   float.
+# - Otherwise, return the contents of the file as a
+#   string.
+#
+#You may assume that the file has only one line.
+#
+#Hints:
+#
+# - Don't forget to close the file when you're done!
+# - Remember, anything you read from a file is
+#   initially interpreted as a string.
+
+
+#Write your function here!
+def load_file(file):
+    res = open(file, 'r');
+    l = res.readline()
+    #print(l)
+    #print(type(l))
+    #for l in res:
+        #print(l)
+        #print(type(l))
+    try:
+        value = int(l)
+    except:
+        try:
+            value = float(l)
+        except:
+            value = l
+    
+    res.close()
+    return value
