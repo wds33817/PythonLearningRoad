@@ -465,7 +465,9 @@ print(solution("abaaaaaa"))
 
 
 
-
+==============================================
+# Write to file
+==============================================
 
 1| string1 = "Hi!"
 2| string2 = "Hey!"
@@ -488,5 +490,40 @@ print(solution("abaaaaaa"))
 7| output_file.write(string2 + "\n")
 8| output_file.write(string3)
 9| output_file.close()
+
+
+
+List = ["David", "Lucy", "Ping", "Dana"]
+outputFile = open("OutputFile.txt", "w")
+outputFile = writelines(List)
+outputFile.close()
+
+
+
+List = ["David", "Lucy", "Ping", "Dana"]
+outputFile = open("OutputFile.txt", "w")
+for name in List:
+    outputFile.write(name + "\n")
+outputFile.close()
+
+
+
+
+List = ["David", "Lucy", "Ping", "Dana"]
+outputFile = open("OutputFile.txt", "w")
+outputFile = write("\n".join(List))
+outputFile.close()
+
+
+
+
+List = ["David", "Lucy", "Ping", "Dana"]
+outputFile = open("OutputFile.txt", "w")
+for name in List:
+    print(name, file = outputFile)
+outputFile.close()
+
+print() adds line breaks by default, so we don't need to add them manually.
+Note that the fifth option is close to working -- if we added one more keyword argument, sep = "\n", then the fifth option would work, too.
 
 
