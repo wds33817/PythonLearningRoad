@@ -587,3 +587,59 @@ def load_file(file):
     
     res.close()
     return value
+
+
+
+
+
+
+
+#Recall Coding Problem 4.3.9 (Advanced), the free body
+#diagram problem. If you were unable to solve that, we've
+#included the sample answer in the dropdown in the top left
+#-- feel free to use that to write your answer to this
+#problem.
+#
+#Revise your code from that problem to use a file instead of
+#a list as its parameter. Name this new function
+#find_net_force_from_file. The function should take one
+#parameter, the name of a file. The function should return
+#the net magnitude and direction, just as it did in the other
+#problem.
+#
+#Each line of the file will have two numbers, both integers:
+#the first number will be the magnitude, and the second
+#number will be the angle (in degrees, from -180 to 180).
+#There will be a space between them.
+#
+#HINT: You may have multiple functions in your code if you
+#want!
+#
+#HINT 2: Try to write this such that you can reuse as much
+#of your earlier code as possible. Remember, when loading
+#from a file, any text you load is initially a string. You'll
+#almost certainly need to use the split() method.
+
+from math import sin, cos, tan, asin, acos, atan2, radians, degrees, sqrt
+
+#Add your function here!
+
+def find_net_force_from_file(filename):
+    with open(filename, 'r') as f:
+        forces = []
+        for line in f:
+            magnitude, angle = map(int, line.split())
+            angle_radians = radians(angle)
+            forces.append((magnitude, angle_radians))
+
+        net_force = (0, 0)
+        for force in forces:
+            net_force = (
+                net_force[0] + force[0] * cos(force[1]),
+                net_force[1] + force[0] * sin(force[1])
+            )
+
+    magnitude = sqrt(net_force[0] ** 2 + net_force[1] ** 2)
+    angle = degrees(atan2(net_force[1], net_force[0]))
+    f.close()
+    return (round(magnitude, 1), round(angle, 1))
