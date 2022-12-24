@@ -532,3 +532,11 @@ Note that the fifth option is close to working -- if we added one more keyword a
 
 Note that you choose whether to write or append when opening the file, not when writing text to the file. 
 To write text, the file must already be open.
+
+
+Read file:
+inputFile = open("OutputFile.txt", "r")
+print(inputFile.readline().strip())
+inputFile.close()
+
+
