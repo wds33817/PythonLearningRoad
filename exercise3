@@ -429,4 +429,21 @@ print("23 is in intlist (recursive):", recursive_binary_search(intlist, 23))
 print("50 is in intlist (recursive):", recursive_binary_search(intlist, 50))
 
 
+Imagine you have a data set with 9,987 names. The data set is sorted alphabetically. You want to find out if the name "David Joyner" is in the data set.
 
+Using a linear search, what is the minimum number of names we might have to check?
+1
+  正确 
+ 
+Using a linear search, what is the maximum number of names we might have to check?
+9987
+  正确 
+ 
+Using a binary search, what is the minimum number of names we might have to check?
+1
+  正确 
+ 
+Using a binary search, what is the maximum number of names we might have to check?
+13
+  正确 
+ 
