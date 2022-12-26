@@ -610,7 +610,7 @@ def next_move(hand):
     total = 0
     ace_count = 0
     for card in hand:
-        if card.isdigit():
+        if card in "123456789":
             total += int(card)
         elif card in "JQK":
             total += 10
@@ -618,7 +618,7 @@ def next_move(hand):
             ace_count += 1
         else:
             total += 10
-    
+    print(total)
     if total > 21:
         return "Bust"
     
@@ -629,3 +629,7 @@ def next_move(hand):
         return "Stay"
     
     return "Hit"
+
+
+
+
