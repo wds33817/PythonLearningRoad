@@ -1,0 +1,41 @@
+The following things were correct about your submission:
+
+We expected to find a function named check_plagiarism in your code, and we did.
+
+We tested your code with file_1 = "file_1_copy.txt", file_2 = "file_2_copy.txt". We expected check_plagiarism to return the str "if i go crazy then", and it did.
+
+We tested your code with file_1 = "file_1_copy.txt", file_2 = "file_3_copy.txt". We expected check_plagiarism to return the str "i left my body lying somewhere in the sands of time", and it did.
+
+We tested your code with file_1 = "file_2_copy.txt", file_2 = "file_3_copy.txt". We expected check_plagiarism to return the bool False, and it did.
+
+We tested your code with file_1 = "file_pigkGm.txt", file_2 = "file_MwQiDh.txt". We expected check_plagiarism to return the str "moonlit conn band collinear language mardi indy whoa boatman", and it did.
+
+We tested your code with file_1 = "file_pigkGm.txt", file_2 = "file_tTZVqw.txt". We expected check_plagiarism to return the str "occurred halve friction aint florist parapsychology chafe stanley transport doorkeep stern audiovisual fogarty storyboard heuristic fillip thrombosis windsor moliere bertie", and it did.
+
+We tested your code with file_1 = "file_MwQiDh.txt", file_2 = "file_tTZVqw.txt". We expected check_plagiarism to return the bool False, and it did.
+
+The contents of file_1_copy.txt, file_2_copy.txt, and file_3_copy.txt are the same as they were originally in your workspace. The contents of file_pigkGm.txt, file_MwQiDh.txt, and file_tTZVqw.txt are shown below:
+
+file_pigkGm.txt:
+snow boron hobbyhorse decimal leaden annuli survivor lingo impolite cameramen hugging mcintosh selfridge penicillin leopard instinctual moonlit conn band collinear language mardi indy whoa boatman allegro expansible melange inaccessible imitable wholehearted frame wolcott gotham visitation hyper rockford achaean bandstand forlorn scythia trample refusal occurred halve friction aint florist parapsychology chafe stanley transport doorkeep stern audiovisual fogarty storyboard heuristic fillip thrombosis windsor moliere bertie
+
+file_MwQiDh.txt:
+cook tramp esoteric product allegro expansible melange inaccessible chant medicate laue youth moonlit conn band collinear language mardi indy whoa boatman herd ruse inexperience marginalia mandarin onondaga icarus pamper
+
+file_tTZVqw.txt:
+snow boron hobbyhorse decimal leaden downdraft vigil matrix infantryman luncheon thiouracil gender footage equitation nash allegro expansible melange inaccessible prizewinning tote ebb exaggerate extraneous placeable maverick molal kirby epiphany frilly occurred halve friction aint florist parapsychology chafe stanley transport doorkeep stern audiovisual fogarty storyboard heuristic fillip thrombosis windsor moliere bertie
+
+file_1.txt:
+i took a walk around the world to ease my troubled mind i left my body lying somewhere in the sands of time i watched the world float to the dark side of the moon i feel there is nothing i can do yeah i watched the world float to the dark side of the moon after all i knew it had to be something to do with you i really dont mind what happens now and then as long as youll be my friend at the end if i go crazy then will you still call me superman if im alive and well will you be there holding my hand ill keep you by my side with my superhuman might kryptonite
+
+file_2.txt:
+i dont care if i go crazy then one two three four five switch crazy go i if care dont i five four three two one and switch
+
+file_3.txt:
+when i was young i took a walk around the woods i found that i was both taller and smaller than the trees returning to my home i set out for the desert i journeyed for long days and nights my spirit left my body and i left my body lying somewhere in the sands of time unburdened by physical form i watched the world float away from me and into the vast moonlight
+
+
+
+
+
+
