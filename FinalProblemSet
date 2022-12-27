@@ -39,3 +39,250 @@ when i was young i took a walk around the woods i found that i was both taller a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#In this problem, we're going to explore a little of how
+#game AI works. We'll do this with a simple problem: building
+#an agent to play the popular card game Blackjack.
+#
+#Blackjack is a card game played with a standard 52-card
+#deck. Suits do not matter in Blackjack, and so we'll just
+#use letters to indicate the different cards: A, 2, 3, 4, 5,
+#6, 7, 8, 9, 0 (for 10), J, Q, K. Note that the number 10 is
+#represented by the single character 0.
+#
+#The goal of Blackjack is to get as close to 21 points as
+#possible without going higher. Each of the thirteen cards
+#above has a point total attached: the numerals are worth
+#their given value (2 points for 2, 7 points for 7, etc.).
+#J, Q, and K are worth 10 points. A is worth either 1 or 11
+#points, whichever is better for the player.
+#
+#At any time, the player has some number of cards in their
+#hand. They must then make a decision of whether to Hit or
+#Stay. Hit means they request an additional card, Stay means
+#they stop with their current total. Players generally try
+#to Hit until it is likely that another card will push them
+#over 21. For example, if a player has a 5 and a 7, there is
+#a relatively low chance that another card would push them
+#over 21 (only J, Q, and K would do so, since 12 + 10 = 22).
+#On the other hand, if they have a 5, a 6, and a 7, they will
+#likely stay because any card above 3 will push them over 21
+#points.
+#
+#The specific goal in Blackjack is to get closer to 21 than
+#the dealer. Dealers must follow a set of prescribed rules
+#for when to Hit and Stay. These are the rules we'll use for
+#our Blackjack-playing AI.
+#
+#The rules are:
+#
+# - The dealer must Hit if their total is below 17.
+# - The dealer must Stay as soon as their total is 17 or
+#   higher.
+# - An Ace (A) should be counted as 11 if it puts the
+#   dealer between 17 and 21 points. If it puts them over
+#   21, though, it should be counted as 1.
+#
+#For example, imagine the dealer's first cards are A and 3.
+#Their point total is either 4 or 14, both below 17, so they
+#Hit. The next card is a 9. If we count the A as 11, then
+#their total is now 23 (11 + 3 + 9), and so we count the
+#A as 1. Their total is 13, and so they Hit again. The next
+#card is a 7, so their total is 20, so they Stay.
+#
+#Write a function called next_move. next_move should have
+#one parameter, a string. Each character of the string will
+#be a card in the dealer's current hand, such as "AK" or
+#"175". The function should return one of three strings:
+#
+# - "Hit" if the dealer should take another card.
+# - "Stay" if the dealer should not take another card.
+# - "Bust" if the sum is already over 21.
+#
+#Remember, your function is only responsible for playing
+#one move at a time. Take in a string representing the
+#current hand, return "Hit", "Stay", or "Bust".
+
+
+#Add your code here!
+def next_move(hand):
+    total = 0
+    ace_count = 0
+    for card in hand:
+        if card in "123456789":
+            total += int(card)
+        elif card in "JQK":
+            total += 10
+        elif card == "A":
+            ace_count += 1
+        else:
+            total += 10
+    print(total)
+    if total > 21:
+        return "Bust"
+    
+    if total >= 17:
+        return "Stay"
+    
+    if ace_count > 0 and 17 <= total + 11 <= 21:
+        return "Stay"
+    
+    return "Hit"
+
+
+
+#Below are some lines of code that will test your function.
+#You can change the value of the variable(s) to test your
+#function with different inputs.
+#
+#If your function works correctly, this will originally
+#print: Hit, Hit, Stay, and Bust.
+print(next_move("0"))
+print(next_move("A39"))
+print(next_move("A397"))
+print(next_move("A397K"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Earlier in the course, you implemented a function that could
+#find if someone had won a particular game of either tic-tac-
+#toe or mancala based on a 2D list or tuple representing the
+#current game board.
+#
+#In this problem, you'll do the same thing, but for the game
+#Connect 4. Write a function called check_winner which takes
+#as input a 2D list. It should return "X" if there are four
+#adjacent "X" values anywhere in the list (row, column,
+#diagonal); "O" if there are four adjacent "O" values
+#anywhere in the list; and None if there are neither.
+#
+#Here are the ways Connect-4 is different from tic-tac-toe:
+#
+# - Connect-4 is played with 6 rows and 7 columns, not 3
+#   rows and 3 columns.
+# - You must have 4 in a row (or column or diagonal) to win
+#   instead of 3.
+# - You may only place pieces in the bottom-most empty
+#   space in a column (e.g. you "drop" the pieces in the
+#   column and they fall to the first empty spot). Note,
+#   though, that this shouldn't affect your reasoning.
+#
+#To keep things simple, we'll still use "X" and "O" to
+#represent the players, and None to represent empty spots.
+#You may assume there will be only one winner per board,
+#no characters besides "X", "O", and None, and you don't
+#have to worry about whether the board is actually a
+#valid game of Connect 4.
+#
+#Hints:
+# - Don't forget both kinds of diagonals, top-left to
+#   bottom-right and bottom-left to top-right.
+# - This board is too large to check every possible place
+#   for a winner: there are 69 places a player could win.
+# - Remember, if you put a negative index in a list,
+#   Python "wraps around" and checks the last value. You
+#   may have to control for this.
+
+
+#Write your function here!
+def check_winner(tupl):
+    # check for horizontal wins
+    for row in tupl:
+        for i in range(4):
+            if row[i:i + 4] == ("X", "X", "X", "X"):
+                # print(row[i:i+4])
+                return "X"
+            elif row[i:i + 4] == ("O", "O", "O", "O"):
+                return "O"
+
+    for col in range(7):
+        column = [row[col] for row in tupl]
+        for i in range(3):
+            if column[i:i + 4] == ["X", "X", "X", "X"]:
+                return "X"
+            elif column[i:i + 4] == ["O", "O", "O", "O"]:
+                return "O"
+
+    # check for diagonal wins (top-left to bottom-right)
+    for row in range(3):
+        for col in range(4):
+            diagonal = [tupl[row + i][col + i] for i in range(4)]
+            if diagonal == ["X", "X", "X", "X"]:
+                return "X"
+            elif diagonal == ("O", "O", "O", "O"):
+                return "O"
+
+    # check for diagonal wins (bottom-left to top-right)
+    for row in range(3, 6):
+        for col in range(4):
+            diagonal = [tupl[row - i][col + i] for i in range(4)]
+            if diagonal == ["X", "X", "X", "X"]:
+                return "X"
+            elif diagonal == ["O", "O", "O", "O"]:
+                return "O"
+
+    # no wins found
+    return None
+
+
+#The code below tests your function on three Connect-4
+#boards. Remember, the line breaks are not needed to create
+#a 2D tuple; they're used here just for readability.
+xwins = ((None, None, None, None, None, None, None),
+         (None, None, None, None, None, None, None),
+         (None, None, None, None, "X", None, None),
+         (None, None, None, "X", "O", "O", None),
+         (None, "O", "X", "X", "O", "X", None),
+         ("O", "X", "O", "O", "O", "X", "X"))
+owins = ((None, None, None, None, None, None, None),
+         (None, None, None, None, None, None, None),
+         ("O", "O", "O", "O", None, None, None),
+         ("O", "X", "X", "X", None, None, None),
+         ("X", "X", "X", "O", "X", None, None),
+         ("X", "O", "O", "X", "O", None, None))
+nowins = (("X", "X", None, None, None, None, None),
+          ("O", "O", None, None, None, None, None),
+          ("O", "X", "O", "O", None, "O", "O"),
+          ("O", "X", "X", "X", None, "X", "X"),
+          ("X", "X", "X", "O", "X", "X", "O"),
+          ("X", "O", "O", "X", "O", "X", "O"))
+         
+print(check_winner(xwins))
+print(check_winner(owins))
+print(check_winner(nowins))
+
+
+
