@@ -534,6 +534,42 @@ print(all_time_record("North Carolina"))
 
 
 
+#This line will open the file:
+#record_file = open('../resource/lib/public/georgia_tech_football.csv', 'r')
+    # Skip the first line (header)
+#def all_time_record():
+record_file = open('../resource/lib/public/georgia_tech_football.csv', 'r')
+#win = 0
+#lose = 0
+#tie = 0
+maxi = 0
+dic = {}
+# Skip the first line (header)
+record_file.readline()
+# Iterate through each line in the file
+for line in record_file:
+    # Split the line by comma
+    date, opp, location, points_for, points_against = line.strip().split(',')
+    dic[opp] = int(points_for)
+    
+    if int(points_for) > maxi:
+        maxi = int(points_for)
+        #if int(points_for) > int(points_against):
+        #    win += 1
+        #elif int(points_against) > int(points_for):
+        #    lose += 1
+        #else:
+        #    tie += 1
+for k,v in dic.items():
+    if v == maxi:
+        print(k)
+ 
+#print(res)
+#print(dic.get(mini))
+#print(f"{mini}")
+record_file.close()
+#print(res)
+
 
 
 
