@@ -134,8 +134,32 @@ print(check_plagiarism("file_1.txt", "file_2.txt"))
 print(check_plagiarism("file_1.txt", "file_3.txt"))
 print(check_plagiarism("file_2.txt", "file_3.txt"))
 
+### Updated version
+def check_plagiarism(filename1, filename2):
+    # Read the content of both files
+    with open(filename1, 'r') as f1:
+        content1 = f1.read()
+    with open(filename2, 'r') as f2:
+        content2 = f2.read()
 
+    # Split the content of both files into a list of words
+    words1 = content1.split()
+    words2 = content2.split()
 
+    # Initialize a variable to store the longest string of words
+    longest_string = ""
+
+    # Iterate over the list of words in the first file
+    for i in range(len(words1) - 4):
+        # Check if there are any instances of 5 or more consecutive words in the second file
+        for j in range(5, 21):
+            if " ".join(words1[i:i + j]) in " ".join(words2):
+              # Update the longest string of words if necessary
+              if len(longest_string) < len(" ".join(words1[i:i + j])):
+                  longest_string = " ".join(words1[i:i + j])
+            
+    # Return the longest string of words if it exists, otherwise return False
+    return longest_string if longest_string else False
 
 
 
